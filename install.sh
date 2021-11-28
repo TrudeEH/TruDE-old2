@@ -30,3 +30,5 @@ sudo make clean install
 cd ..
 
 install_nitrogen
+
+rm -rf */*.o
