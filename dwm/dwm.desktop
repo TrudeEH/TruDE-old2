@@ -1,0 +1,8 @@
+ 
+[Desktop Entry]
+Encoding=UTF-8
+Name=TruDE
+Comment=TrudeEH's DE
+Exec=dwm
+Icon=dwm
+Type=XSession
