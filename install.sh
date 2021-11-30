@@ -1,7 +1,11 @@
 #! /bin/bash
 
+# DE dependencies
 sudo apt install -y compton nitrogen
+sudo pacman -Sy picom nitrogen
 
+# COmpile dependencies
+sudo pacman -S base-devel git libx11 libxft xorg-server xorg-xinit xorg-xsetroot terminus-font 
 
 install_nitrogen () {
     # Dependencies:
