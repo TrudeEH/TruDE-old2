@@ -258,17 +258,17 @@ static int lrpad;            /* sum of left and right padding for text */
 static int (*xerrorxlib)(Display *, XErrorEvent *);
 static unsigned int numlockmask = 0;
 static void (*handler[LASTEvent]) (XEvent *) = {
-	[ButtonPress] = buttonpress,
+	[ButtonPress] = buttonpress, // Mouse button.
 	[ClientMessage] = clientmessage,
 	[ConfigureRequest] = configurerequest,
 	[ConfigureNotify] = configurenotify,
 	[DestroyNotify] = destroynotify,
 	[EnterNotify] = enternotify,
 	[Expose] = expose,
-	[FocusIn] = focusin,
-	[KeyPress] = keypress,
+	[FocusIn] = focusin, // Window is focused.
+	[KeyPress] = keypress, // Keyboad key.
 	[MappingNotify] = mappingnotify,
-	[MapRequest] = maprequest,
+	[MapRequest] = maprequest, // Window map request. (Display on screen)
 	[MotionNotify] = motionnotify,
 	[PropertyNotify] = propertynotify,
 	[UnmapNotify] = unmapnotify
@@ -1489,7 +1489,7 @@ run(void)
 	XEvent ev;
 	/* main event loop */
 	XSync(dpy, False);
-	while (running && !XNextEvent(dpy, &ev))
+	while (running && !XNextEvent(dpy, &ev)) // Finds the next X event being executed. (Inputs, Windows/Display, etc.)
 		if (handler[ev.type])
 			handler[ev.type](&ev); /* call handler */
 }
@@ -2343,6 +2343,8 @@ zoom(const Arg *arg)
 }
 
 int
+
+// Main function.
 main(int argc, char *argv[])
 {
 	if (argc == 2 && !strcmp("-v", argv[1]))
@@ -2353,13 +2355,13 @@ main(int argc, char *argv[])
 		fputs("warning: no locale support\n", stderr);
 	if (!(dpy = XOpenDisplay(NULL)))
 		die("dwm: cannot open display");
-	checkotherwm();
+	checkotherwm(); // Attempts to locate other WM's already running.
 	setup();
 #ifdef __OpenBSD__
 	if (pledge("stdio rpath proc exec", NULL) == -1)
 		die("pledge");
 #endif /* __OpenBSD__ */
-	scan();
+	scan(); // Verifies if other applications are already running.
 	runautostart();
 	run();
 	if(restart) execvp(argv[0], argv);
