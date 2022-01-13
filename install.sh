@@ -33,6 +33,10 @@ cd st/
 sudo make clean install
 cd ..
 
+cd slstatus/
+sudo make clean install
+cd ..
+
 install_nitrogen
 
 rm -rf */*.o
