@@ -11,8 +11,8 @@
 
 # Fedora install
 sudo dnf install -y nitrogen picom git
-sudo dnf install -y libX11-devel libXft-devel libXinerama-devel libXrandr-devel xorg-x11-xinit-session
-sudo dnf install -y fontawesome-fonts
+sudo dnf install -y libX11-devel libXft-devel libXinerama-devel libXrandr-devel
+sudo dnf install -y xorg-x11-xinit-session xsetroot @base-x
 
 install_nitrogen () {
     # Dependencies:
