@@ -63,13 +63,24 @@ static const char unknown_str[] = "n/a";
  * wifi_perc           WiFi signal in percent          interface name (wlan0)
  * wifi_essid          WiFi ESSID                      interface name (wlan0)
  */
+
+/* color codes
+black    = #2E3440
+green    = #A3BE8C
+white    = #D8DEE9
+green    = #373d49
+blue     = #81A1C1
+red      = #BF616A
+darkblue = #7292b2
+*/
+
 static const struct arg args[] = {
 	/* function format          argument */
 	{ run_command, " %s ",  "amixer sget Master | awk -F\"[][]\" '/%/ { print $2 }' | head -n1" },
 	{ cpu_perc, " %s%% ",        NULL },
 	{ ram_perc, " %s%% ",        NULL },
 	{ disk_free, " %s ",     "/" },
-	{ battery_perc, "^c#2E3440^ ^b#7292b2^  %s%% ", "BATT"},
-	{ datetime, "%s",           "%I:%M %p" },
+	{ battery_perc, " %s%% ", "BATT"},
+	{ datetime, "^c#2E3440^ ^b#7292b2^  ^c#2E3440^ ^b#81A1C1^ %s",           "%I:%M %p" },
 };
 

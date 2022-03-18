@@ -6,6 +6,7 @@ static const unsigned int gappx     = 5;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
+static const int user_bh            = 25;        /* 0 means that dwm will calculate the bar height, >= 1 means dwm will user_bh as bar height */
 static const int horizpadbar        = 2;        /* horizontal padding for statusbar */
 static const int vertpadbar         = 0;        /* vertical padding for statusbar */
 static const char *fonts[]          = { "monospace:size=10" };
