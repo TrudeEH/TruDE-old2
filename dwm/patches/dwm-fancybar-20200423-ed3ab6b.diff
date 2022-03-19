@@ -1,13 +1,13 @@
 diff --git a/dwm.c b/dwm.c
-index 4465af1..eff2da6 100644
+index fb1e326..941293e 100644
 --- a/dwm.c
 +++ b/dwm.c
-@@ -695,10 +695,10 @@ dirtomon(int dir)
+@@ -696,10 +696,10 @@ dirtomon(int dir)
  void
  drawbar(Monitor *m)
  {
--	int x, w, sw = 0;
-+	int x, w, sw = 0, tw, mw, ew = 0;
+-	int x, w, tw = 0;
++	int x, w, tw = 0, mw, ew = 0;
  	int boxs = drw->fonts->h / 9;
  	int boxw = drw->fonts->h / 6 + 2;
 -	unsigned int i, occ = 0, urg = 0;
@@ -15,7 +15,7 @@ index 4465af1..eff2da6 100644
  	Client *c;
  
  	/* draw status first so it can be overdrawn by tags later */
-@@ -709,6 +709,8 @@ drawbar(Monitor *m)
+@@ -710,6 +710,8 @@ drawbar(Monitor *m)
  	}
  
  	for (c = m->clients; c; c = c->next) {
@@ -24,10 +24,10 @@ index 4465af1..eff2da6 100644
  		occ |= c->tags;
  		if (c->isurgent)
  			urg |= c->tags;
-@@ -729,15 +731,39 @@ drawbar(Monitor *m)
+@@ -730,15 +732,39 @@ drawbar(Monitor *m)
  	x = drw_text(drw, x, 0, w, bh, lrpad / 2, m->ltsymbol, 0);
  
- 	if ((w = m->ww - sw - x) > bh) {
+ 	if ((w = m->ww - tw - x) > bh) {
 -		if (m->sel) {
 -			drw_setscheme(drw, scheme[m == selmon ? SchemeSel : SchemeNorm]);
 -			drw_text(drw, x, 0, w, bh, lrpad / 2, m->sel->name, 0);
