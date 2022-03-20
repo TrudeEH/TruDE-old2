@@ -4,7 +4,7 @@
 const unsigned int interval = 1000;
 
 /* text to show if no value can be retrieved */
-static const char unknown_str[] = "n/a";
+static const char unknown_str[] = "";
 
 /* maximum output string length */
 #define MAXLEN 2048
@@ -76,11 +76,12 @@ darkblue = #7292b2
 
 static const struct arg args[] = {
 	/* function format          argument */
-	{ run_command, " %s ",  "amixer sget Master | awk -F\"[][]\" '/%/ { print $2 }' | head -n1" },
+	//{ run_command, " %s ",  "amixer sget Master | awk -F\"[][]\" '/%/ { print $2 }' | head -n1" },
 	{ cpu_perc, " %s%% ",        NULL },
 	{ ram_perc, " %s%% ",        NULL },
 	{ disk_free, " %s ",     "/" },
-	{ battery_perc, " %s%% ", "BATT"},
+	{ battery_perc, " %s%%", "BATT"},
+	{ battery_perc, "%s ", "BAT0"},
 	{ datetime, "^c#2E3440^ ^b#7292b2^  ^c#2E3440^ ^b#81A1C1^ %s",           "%I:%M %p" },
 };
 
