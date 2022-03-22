@@ -84,6 +84,7 @@ static const struct arg args[] = {
 	{ battery_state, "%s",   "BAT0"},
 	{ battery_perc, "%s%%", "BATT"},
 	{ battery_perc, "%s ", "BAT0"},
+	{ vol_perc, "VOLUME: %s", "/dev/mixer" },
 	{ datetime, "^c#2E3440^ ^b#7292b2^  ^c#2E3440^^b#81A1C1^ %s   ",           "%I:%M %p" }
 };
 
