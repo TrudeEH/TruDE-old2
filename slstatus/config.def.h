@@ -77,6 +77,7 @@ darkblue = #7292b2
 static const struct arg args[] = {
 	/* function format          argument */
 	{ run_command, "         %s ",  "amixer sget Master | awk -F\"[][]\" '/%/ { print $2 }' | head -n1" },
+	//{ run_command, " %s ", "nmcli -f IN-USE,SIGNAL,SSID device wifi | awk '/^\*/{if (NR!=1) {print $2}}' ; sleep 10" },
 	{ cpu_perc, " %s%% ",        NULL },
 	{ ram_perc, " %s%% ",        NULL },
 	{ disk_free, " %s ",     "/" },
