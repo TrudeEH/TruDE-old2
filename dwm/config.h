@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 1;        /* border pixel of windows */
+static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int gappx     = 10;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
@@ -60,8 +60,8 @@ static const Layout layouts[] = {
 	{ MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} },
 
 /* volume control */
-static const char *upvol[]   = { "amixer", "set", "Master", "3%+",    NULL };
-static const char *downvol[] = { "amixer", "set", "Master", "3%-",    NULL };
+static const char *upvol[]   = { "amixer", "set", "Master", "5%+",    NULL };
+static const char *downvol[] = { "amixer", "set", "Master", "5%-",    NULL };
 static const char *mutevol[] = { "amixer", "set", "Master", "toggle", NULL };
 
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
